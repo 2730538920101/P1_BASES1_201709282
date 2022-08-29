@@ -40,12 +40,14 @@ CREATE TABLE CLIENTES(
 CREATE TABLE TEMPORAL_ORDENES(
     id_orden INT NOT NULL ,
     linea_orden INT NOT NULL ,
-    fecha_orden DATE NOT NULL ,
+    fecha_orden VARCHAR(50) NOT NULL ,
     id_cliente INT NOT NULL ,
     id_vendedor INT NOT NULL ,
     id_producto INT NOT NULL,
     cantidad INT NOT NULL
 );
+
+
 CREATE TABLE ORDENES(
   id_orden INT NOT NULL PRIMARY KEY ,
   fecha_orden DATE NOT NULL ,
