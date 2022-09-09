@@ -98,7 +98,11 @@ INNER JOIN CATEGORIAS ON PRODUCTOS.fk_id_categoria = CATEGORIAS.id_categoria
 INNER JOIN VENDEDORES ON DETALLE_ORDEN.fk_id_vendedor = VENDEDORES.id_vendedor
 INNER JOIN PAISES ON VENDEDORES.fk_id_pais = PAISES.id_pais
 GROUP BY PAISES.nombre, CATEGORIAS.nombre ORDER BY pais, cantidad DESC
-) AS consulta7 GROUP BY pais;
+) AS consulta7 GROUP BY consulta7.pais;
+
+
+
+
 
 # CONSULTA 8 Mostrar las ventas por mes de Inglaterra.
 # Debe de mostrar el número del mes y el monto.
