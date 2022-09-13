@@ -68,7 +68,7 @@ INNER JOIN PRODUCTOS ON DETALLE_ORDEN.fk_id_producto = PRODUCTOS.id_producto
 INNER JOIN ORDENES ON DETALLE_ORDEN.fk_id_orden = ORDENES.id_orden
 INNER JOIN CLIENTES ON ORDENES.fk_id_cliente = CLIENTES.id_cliente
 INNER JOIN PAISES ON CLIENTES.fk_id_pais = PAISES.id_pais
-GROUP BY PAISES.id_pais ORDER BY monto DESC LIMIT 5
+GROUP BY PAISES.id_pais ORDER BY monto ASC LIMIT 5
 )AS compras_paises ORDER BY compras_paises.monto ASC;
 
 # CONSULTA 6 Mostrar la categoría que más y menos se ha comprado.
