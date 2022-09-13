@@ -95,10 +95,11 @@ SELECT (PAISES.nombre) AS pais, (CATEGORIAS.nombre) AS categoria,
 SUM(cantidad) AS cantidad FROM DETALLE_ORDEN
 INNER JOIN PRODUCTOS ON DETALLE_ORDEN.fk_id_producto = PRODUCTOS.id_producto
 INNER JOIN CATEGORIAS ON PRODUCTOS.fk_id_categoria = CATEGORIAS.id_categoria
-INNER JOIN VENDEDORES ON DETALLE_ORDEN.fk_id_vendedor = VENDEDORES.id_vendedor
-INNER JOIN PAISES ON VENDEDORES.fk_id_pais = PAISES.id_pais
+INNER JOIN ORDENES ON DETALLE_ORDEN.fk_id_orden = ORDENES.id_orden
+INNER JOIN CLIENTES ON ORDENES.fk_id_cliente = CLIENTES.id_cliente
+INNER JOIN PAISES ON CLIENTES.fk_id_pais = PAISES.id_pais
 GROUP BY PAISES.nombre, CATEGORIAS.nombre ORDER BY pais, cantidad DESC
-) AS consulta7 GROUP BY consulta7.pais;
+) AS consulta7 GROUP BY consulta7.pais ORDER BY consulta7.cantidad ASC;
 
 
 
